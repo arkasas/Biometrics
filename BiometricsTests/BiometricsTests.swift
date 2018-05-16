@@ -21,16 +21,32 @@ class BiometricsTests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testConfiguration() {
+        let configuration = TestConfiguration()
+        XCTAssertNotNil(configuration.reason)
+        XCTAssertNotNil(configuration.appServiceName)
     }
-    
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+
+    func testSystemAuth() {
+        let configuration = TestConfiguration()
+        let systemAuth = SystemAuthentication(configuration: configuration)
+
+        XCTAssertNotNil(systemAuth)
+
+        do {
+            try systemAuth.save(name: "Test", password: "Test")
+        } catch {
+            print(error)
         }
     }
-    
+}
+
+class TestConfiguration: Configuration {
+    var reason: String {
+        return "Reason"
+    }
+
+    var appServiceName: String {
+        return "test.test.demo"
+    }
 }
