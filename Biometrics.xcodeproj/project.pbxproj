@@ -10,6 +10,11 @@
 		B9944A1520AC0E1800C06DFA /* Biometrics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9944A0B20AC0E1800C06DFA /* Biometrics.framework */; };
 		B9944A1A20AC0E1800C06DFA /* BiometricsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9944A1920AC0E1800C06DFA /* BiometricsTests.swift */; };
 		B9944A1C20AC0E1800C06DFA /* Biometrics.h in Headers */ = {isa = PBXBuildFile; fileRef = B9944A0E20AC0E1800C06DFA /* Biometrics.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B9944A2620AC0E3300C06DFA /* Biometrics.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9944A2520AC0E3300C06DFA /* Biometrics.swift */; };
+		B9944A2820AC0E5600C06DFA /* KeychainPasswordItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9944A2720AC0E5600C06DFA /* KeychainPasswordItem.swift */; };
+		B9944A2A20AC0EE100C06DFA /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9944A2920AC0EE100C06DFA /* Configuration.swift */; };
+		B9944A2D20AC0F6100C06DFA /* SystemAuthentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9944A2C20AC0F6100C06DFA /* SystemAuthentication.swift */; };
+		B9944A2F20AC12D600C06DFA /* BiometricsAuthentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9944A2E20AC12D600C06DFA /* BiometricsAuthentication.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +34,11 @@
 		B9944A1420AC0E1800C06DFA /* BiometricsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BiometricsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9944A1920AC0E1800C06DFA /* BiometricsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BiometricsTests.swift; sourceTree = "<group>"; };
 		B9944A1B20AC0E1800C06DFA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B9944A2520AC0E3300C06DFA /* Biometrics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Biometrics.swift; sourceTree = "<group>"; };
+		B9944A2720AC0E5600C06DFA /* KeychainPasswordItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainPasswordItem.swift; sourceTree = "<group>"; };
+		B9944A2920AC0EE100C06DFA /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
+		B9944A2C20AC0F6100C06DFA /* SystemAuthentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemAuthentication.swift; sourceTree = "<group>"; };
+		B9944A2E20AC12D600C06DFA /* BiometricsAuthentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BiometricsAuthentication.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,8 +81,12 @@
 		B9944A0D20AC0E1800C06DFA /* Biometrics */ = {
 			isa = PBXGroup;
 			children = (
+				B9944A2B20AC0EE700C06DFA /* Protocol */,
 				B9944A0E20AC0E1800C06DFA /* Biometrics.h */,
 				B9944A0F20AC0E1800C06DFA /* Info.plist */,
+				B9944A2720AC0E5600C06DFA /* KeychainPasswordItem.swift */,
+				B9944A2C20AC0F6100C06DFA /* SystemAuthentication.swift */,
+				B9944A2E20AC12D600C06DFA /* BiometricsAuthentication.swift */,
 			);
 			path = Biometrics;
 			sourceTree = "<group>";
@@ -84,6 +98,15 @@
 				B9944A1B20AC0E1800C06DFA /* Info.plist */,
 			);
 			path = BiometricsTests;
+			sourceTree = "<group>";
+		};
+		B9944A2B20AC0EE700C06DFA /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				B9944A2520AC0E3300C06DFA /* Biometrics.swift */,
+				B9944A2920AC0EE100C06DFA /* Configuration.swift */,
+			);
+			path = Protocol;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -148,6 +171,7 @@
 				TargetAttributes = {
 					B9944A0A20AC0E1800C06DFA = {
 						CreatedOnToolsVersion = 9.3;
+						LastSwiftMigration = 0930;
 					};
 					B9944A1320AC0E1800C06DFA = {
 						CreatedOnToolsVersion = 9.3;
@@ -194,6 +218,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B9944A2A20AC0EE100C06DFA /* Configuration.swift in Sources */,
+				B9944A2620AC0E3300C06DFA /* Biometrics.swift in Sources */,
+				B9944A2820AC0E5600C06DFA /* KeychainPasswordItem.swift in Sources */,
+				B9944A2F20AC12D600C06DFA /* BiometricsAuthentication.swift in Sources */,
+				B9944A2D20AC0F6100C06DFA /* SystemAuthentication.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -339,6 +368,7 @@
 		B9944A2020AC0E1800C06DFA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -348,6 +378,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = Biometrics/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -356,6 +387,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = pl.apitula.Biometrics;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -364,6 +396,7 @@
 		B9944A2120AC0E1800C06DFA /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -373,6 +406,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = Biometrics/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -389,6 +423,7 @@
 		B9944A2320AC0E1800C06DFA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5AG4QGJY7S;
 				INFOPLIST_FILE = BiometricsTests/Info.plist;
@@ -407,6 +442,7 @@
 		B9944A2420AC0E1800C06DFA /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5AG4QGJY7S;
 				INFOPLIST_FILE = BiometricsTests/Info.plist;
