@@ -6,7 +6,7 @@
 //  Copyright © 2018 Arkadiusz Pituła. All rights reserved.
 //
 
-class SystemAuthentication: Biometrics {
+public class SystemAuthentication: Biometrics {
 
     private struct DefaultNames {
         static let defaultName = "systemAuthName"
@@ -25,11 +25,11 @@ class SystemAuthentication: Biometrics {
         case userHasNoLoginKey
     }
     
-    required init(configuration: Configuration) {
+    required public init(configuration: Configuration) {
         self.configuration = configuration
     }
 
-    func save(name: String, password: String) throws {
+    public func save(name: String, password: String) throws {
         let passwordItem = KeychainPasswordItem(service: configuration.appServiceName, account: name, accessGroup: configuration.accessGroup)
 
         try passwordItem.savePassword(password)
@@ -37,7 +37,7 @@ class SystemAuthentication: Biometrics {
         saveHasLoginKey(value: true)
     }
 
-    func authenticate(completion: @escaping (Completion) -> Void) {
+    public func authenticate(completion: @escaping (Completion) -> Void) {
         let bioAuth = BiometricsAuthentication(reason: configuration.reason)
 
         if !bioAuth.canEvaluatePolicy() {

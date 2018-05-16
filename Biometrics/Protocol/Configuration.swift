@@ -6,7 +6,7 @@
 //  Copyright © 2018 Arkadiusz Pituła. All rights reserved.
 //
 
-@objc protocol Configuration {
+@objc public protocol Configuration {
     var reason: String { get }
     var appServiceName: String { get }
     @objc optional var accessGroup: String { get }

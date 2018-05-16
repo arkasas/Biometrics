@@ -6,7 +6,7 @@
 //  Copyright © 2018 Arkadiusz Pituła. All rights reserved.
 //
 
-enum Completion {
+public enum Completion {
     case success(String)
     case fail(Error)
 }
